@@ -7,7 +7,11 @@ import {
 import { FaPaw, FaCarCrash, FaCode } from "react-icons/fa";
 import { SiYourtraveldottv } from 'react-icons/si';
 import { RiEmotionLaughFill, RiGamepadFill } from "react-icons/ri";
-import { MdMusicNote, MdSports } from "react-icons/md";
+import {
+  MdMusicNote,
+  MdSports,
+  MdOutlineLocalFireDepartment,
+} from "react-icons/md";
 
 export const topics = [
   {
@@ -54,6 +58,10 @@ export const topics = [
   {
     name: "travel",
     icon: <SiYourtraveldottv />,
+  },
+  {
+    name: "art",
+    icon: <MdOutlineLocalFireDepartment />,
   },
 ];
 
