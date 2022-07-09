@@ -9,7 +9,7 @@ function Discover() {
   const { topic } = router.query;
 
   const activeTopicStyle =
-    "xl:border-2 hover:bg-primary xl:border-[#007eff] px-3 py-2 rounded xl:rounded-full flex items-center gap-2 justify-center cursor-pointer text-[#007eff]";
+    "xl:border-2 hover:bg-primary xl:border-[#ff486d] px-3 py-2 rounded xl:rounded-full flex items-center gap-2 justify-center cursor-pointer text-[#ff486d]";
 
   const topicStyle =
     "xl:border-2 hover:bg-primary xl:border-gray-300 px-3 py-2 rounded xl:rounded-full flex items-center gap-2 justify-center cursor-pointer text-black";
@@ -23,9 +23,7 @@ function Discover() {
         {topics.map((item) => (
           <Link href={`/?topic=${item.name}`} key={item.name}>
             <div className={topic == item.name ? activeTopicStyle : topicStyle}>
-              <span className="font-bold text-2xl xl:text-md">
-                {item.icon}
-              </span>
+              <span className="font-bold text-2xl xl:text-md">{item.icon}</span>
               <span className="font-medium text-md hidden xl:block capitalize">
                 {item.name}
               </span>

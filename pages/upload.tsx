@@ -9,6 +9,7 @@ import useAuthStore from "../store/authStore";
 import { client } from "../utils/client";
 
 import { topics } from "../utils/constants";
+import { BASE_URL } from "../utils";
 
 const Upload = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,7 +23,6 @@ const Upload = () => {
 
   const { userProfile }: { userProfile: any } = useAuthStore();
   const router = useRouter();
-  
 
   const uploadVideo = async (e: any) => {
     const selectedFile = e.target.files[0];
@@ -63,14 +63,14 @@ const Upload = () => {
           _type: "postedBy",
           _ref: userProfile?._id,
         },
-        topic: category
-      }
+        topic: category,
+      };
 
-      await axios.post('http://localhost:3000/api/post', document);
+      await axios.post(`${BASE_URL}/api/post`, document);
 
       router.push("/");
     }
-  }
+  };
 
   return (
     <div className="flex w-full h-full absolute left-0 top-[60px] mb-10 pt-10 lg:pt-20 bg-[#f8f8f8] justify-center">
@@ -111,7 +111,7 @@ const Upload = () => {
                         UP TO 10 MIN <br />
                         LESS THAN 2GB
                       </p>
-                      <p className="bg-[#007eff] text-center mt-10 rounded text-white text-md font-medium p-2 w-52 outline-none">
+                      <p className="bg-[#ff486d] text-center mt-10 rounded text-white text-md font-medium p-2 w-52 outline-none">
                         Select File
                       </p>
                     </div>
@@ -166,7 +166,7 @@ const Upload = () => {
             <button
               onClick={handlePost}
               type="button"
-              className="bg-[#007eff] text-white border-2 text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
+              className="bg-[#ff486d] text-white border-2 text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
             >
               Post
             </button>

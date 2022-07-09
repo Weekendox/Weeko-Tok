@@ -33,6 +33,12 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
     }
   }, [isVideoMuted]);
 
+  useEffect(() => {
+    if (videoRef?.current) {
+      videoRef.current.muted = isVideoMuted;
+    }
+  }, [isVideoMuted]);
+
   return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
       <div>
@@ -88,20 +94,20 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
             <div className="absolute -bottom-1.5 cursor-pointer left-40 md:left-14 lg:left-60 flex gap-10 lg:justify-between w-[100px] md:w-[50px] p-3">
               {playing ? (
                 <button onClick={onVideoPress}>
-                  <BsFillPauseFill className="text-[#007eff] text-2xl lg:text-4xl" />
+                  <BsFillPauseFill className="text-[#ff486d] text-2xl lg:text-4xl" />
                 </button>
               ) : (
                 <button onClick={onVideoPress}>
-                  <BsFillPlayFill className="text-[#007eff] text-2xl lg:text-4xl" />
+                  <BsFillPlayFill className="text-[#ff486d] text-2xl lg:text-4xl" />
                 </button>
               )}
               {isVideoMuted ? (
                 <button onClick={() => setIsVideoMuted(false)}>
-                  <HiVolumeOff className="text-[#007eff] text-2xl lg:text-4xl" />
+                  <HiVolumeOff className="text-[#ff486d] text-2xl lg:text-4xl" />
                 </button>
               ) : (
                 <button onClick={() => setIsVideoMuted(true)}>
-                  <HiVolumeUp className="text-[#007eff] text-2xl lg:text-4xl" />
+                  <HiVolumeUp className="text-[#ff486d] text-2xl lg:text-4xl" />
                 </button>
               )}
             </div>

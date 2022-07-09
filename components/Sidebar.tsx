@@ -15,7 +15,7 @@ const Sidebar = () => {
   const userProfile = false;
 
   const normalLink =
-    "flex items-center gap3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#007eff] rounded";
+    "flex items-center gap3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#ff486d] rounded";
 
   return (
     <div>
@@ -37,7 +37,6 @@ const Sidebar = () => {
               </div>
             </Link>
           </div>
-          
 
           <Discover />
           <SuggestedAccounts />
