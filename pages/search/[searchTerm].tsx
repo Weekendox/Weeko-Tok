@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { GoUnverified } from "react-icons/go";
 import Link from "next/link";
+import Head from "next/head";
 import axios from "axios";
 
 import NoResults from "../../components/NoResults";
@@ -25,6 +26,11 @@ const Search = ({ videos }: { videos: Video[] }) => {
   );
 
   return (
+    <>
+      <Head>
+        <title>{searchTerm} | Search</title>
+      </Head>
+
     <div className="w-full  ">
       <div className="flex gap-10 mb-10 border-b-2 border-gray-200 md:fixed z-50 bg-white w-full">
         <p
@@ -84,6 +90,7 @@ const Search = ({ videos }: { videos: Video[] }) => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

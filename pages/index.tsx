@@ -3,6 +3,8 @@ import NoResults from "../components/NoResults";
 import VideoCard from "../components/VideoCard";
 import { Video } from "../types";
 import { BASE_URL } from "../utils";
+import Head from "next/head";
+
 
 interface IProps {
   videos: Video[];
@@ -10,16 +12,21 @@ interface IProps {
 
 const Home = ({ videos }: IProps) => {
   return (
-    <div className="flex flex-col gap-10 videos h-full">
+    <>
+      <Head>
+        <title>Home Page | Weeko App</title>
+      </Head>
+      <div className="flex flex-col gap-10 videos h-full">
         {videos.length ? (
-            videos.map((video: Video) => (
-                <VideoCard post={video} key={video._id}/>
-            ))
+          videos.map((video: Video) => (
+            <VideoCard post={video} key={video._id} />
+          ))
         ) : (
-            <NoResults text={'No Videos'} />
+          <NoResults text={"No Videos"} />
         )}
-    </div>
-  )
+      </div>
+    </>
+  );
 }
 
 
