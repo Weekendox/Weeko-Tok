@@ -1,4 +1,4 @@
-Live Version Using <a href="https://vercel.com/">Vercel</a> | https://weeko-peeko.vercel.app/
+Live Version Using <a href="https://vercel.com/">Vercel </a> >> | << https://weeko-peeko.vercel.app/
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
