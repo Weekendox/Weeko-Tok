@@ -27,24 +27,12 @@ export const topics = [
     icon: <RiGamepadFill />,
   },
   {
-    name: "anime",
-    icon: <GiFilmProjector />,
-  },
-  {
     name: "food",
     icon: <GiCakeSlice />,
   },
   {
-    name: "cars",
-    icon: <FaCarCrash />,
-  },
-  {
     name: "dance",
     icon: <MdMusicNote />,
-  },
-  {
-    name: "beauty",
-    icon: <GiLipstick />,
   },
   {
     name: "animals",
@@ -53,11 +41,6 @@ export const topics = [
   {
     name: "sports",
     icon: <MdSports />,
-  },
-
-  {
-    name: "travel",
-    icon: <SiYourtraveldottv />,
   },
   {
     name: "art",
