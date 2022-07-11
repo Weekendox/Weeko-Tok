@@ -111,7 +111,7 @@ const Upload = () => {
                         UP TO 10 MIN <br />
                         LESS THAN 2GB
                       </p>
-                      <p className="bg-[#fe9589] text-center mt-10 rounded text-white text-md font-medium p-2 w-52 outline-none">
+                      <p className="bg-[#ff1642] text-center mt-10 rounded text-white text-md font-medium p-2 w-52 outline-none">
                         Select File
                       </p>
                     </div>
@@ -166,7 +166,7 @@ const Upload = () => {
             <button
               onClick={handlePost}
               type="button"
-              className="bg-[#fe9589] text-white border-2 text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
+              className="bg-[#ff1642] text-white border-2 text-md font-medium p-2 rounded w-28 lg:w-44 outline-none"
             >
               Post
             </button>

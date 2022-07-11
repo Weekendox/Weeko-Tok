@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MdVerified } from "react-icons/md";
+import { GoUnverified } from "react-icons/go";
 
 import useAuthStore from "../store/authStore";
 import { IUser } from "../types";
@@ -34,13 +34,13 @@ function SuggestedAccounts() {
                 />
               </div>
               <div className="hidden xl:block">
-              <p className="flex gap-1 items-center text-md font-bold text-primary lowercase">
-                {user.userName.replaceAll(" ", "")}
-                <MdVerified className="text-blue-400"/>
-              </p>
-              <p className="capitalize text-gray-400 text-xs">
-                {user.userName}
-              </p>
+                <p className="flex gap-1 items-center text-md font-bold text-primary lowercase">
+                  {user.userName.replaceAll(" ", "")}
+                  <GoUnverified className="text-blue-400" />
+                </p>
+                <p className="capitalize text-gray-400 text-xs">
+                  {user.userName}
+                </p>
               </div>
             </div>
           </Link>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { MdVerified } from "react-icons/md";
+import { GoUnverified } from "react-icons/go";
 import axios from "axios";
 
 import VideoCard from "../../components/VideoCard";
@@ -27,13 +27,13 @@ const Profile = ({ data }: IProps) => {
     ? "border-b-4 border-black"
     : "text-gray-400";
 
-    useEffect(() => {
-        if (showUserVideos) {
-            setVideosList(userVideos);
-        } else {
-            setVideosList(userLikedVideos);
-        }
-    }, [showUserVideos, userVideos, userLikedVideos]);
+  useEffect(() => {
+    if (showUserVideos) {
+      setVideosList(userVideos);
+    } else {
+      setVideosList(userLikedVideos);
+    }
+  }, [showUserVideos, userVideos, userLikedVideos]);
 
   return (
     <div className="w-full">
@@ -51,7 +51,7 @@ const Profile = ({ data }: IProps) => {
         <div className="flex flex-col justify-center">
           <p className="md:text-2xl tracking-wider flex gap-1 items-center justify-center text-md font-bold text-primary lowercase">
             {user.userName.replaceAll(" ", "")}
-            <MdVerified className="text-blue-400" />
+            <GoUnverified className="text-blue-400" />
           </p>
           <p className="capitalize md:text-xl text-gray-400 text-xs">
             {user.userName}
@@ -76,11 +76,15 @@ const Profile = ({ data }: IProps) => {
         </div>
 
         <div className="flex gap-6 flex-wrap md:justify-start">
-            {videosList.length > 0 ? (
-                videosList.map((post: Video, idx: number) => (
-                    <VideoCard key={idx} post={post} />
-                ))
-            ) : <NoResults text={`No ${showUserVideos ? '' : 'Liked'} Videos Yet`}/>}
+          {videosList.length > 0 ? (
+            videosList.map((post: Video, idx: number) => (
+              <VideoCard key={idx} post={post} />
+            ))
+          ) : (
+            <NoResults
+              text={`No ${showUserVideos ? "" : "Liked"} Videos Yet`}
+            />
+          )}
         </div>
       </div>
     </div>

@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { MdVerified, MdOutlineCancel } from "react-icons/md";
+import { GoUnverified } from "react-icons/go";
+import { MdOutlineCancel } from "react-icons/md";
 import { BsFillPlayFill } from "react-icons/bs";
 import { HiVolumeUp, HiVolumeOff } from "react-icons/hi";
 import axios from "axios";
@@ -55,7 +56,7 @@ const Detail = ({ postDetails }: IProps) => {
     }
   };
 
-  const addComment = async (e) => {
+  const addComment = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     if (userProfile && comment) {
@@ -137,7 +138,7 @@ const Detail = ({ postDetails }: IProps) => {
                   <p className="flex gap-2 items-center md:text-md font-bold text-primary">
                     {post.postedBy.userName}
                     {` `}
-                    <MdVerified className="text-blue-400 text-md" />
+                    <GoUnverified className="text-blue-400 text-md" />
                   </p>
                   <p className="capitalize font-medium text-xs text-gray-500 hidden md:block">
                     {post.postedBy.userName}
@@ -158,7 +159,7 @@ const Detail = ({ postDetails }: IProps) => {
               />
             )}
           </div>
-          <Comments 
+          <Comments
             comment={comment}
             setComment={setComment}
             addComment={addComment}

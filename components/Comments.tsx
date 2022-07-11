@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MdVerified } from "react-icons/md";
+import { GoUnverified } from "react-icons/go";
 
 import useAuthStore from "../store/authStore";
 import NoResults from "./NoResults";
@@ -54,9 +54,9 @@ const Comments = ({
                             />
                           </div>
                           <div className="block">
-                            <p className="flex gap-1 items-center text-md font-bold text-primary">
+                            <p className="flex gap-1 items-center text-md font-bold text-gray-300">
                               {user.userName.replaceAll(" ", "")}
-                              <MdVerified className="text-blue-400" />
+                              <GoUnverified className="text-blue-400" />
                             </p>
                           </div>
                         </div>
